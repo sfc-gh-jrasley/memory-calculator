@@ -1,10 +1,10 @@
 import streamlit as st
 
 def memory_calculator(model_size, gpus, hidden_size, vocab, layers, total_sequence):
-    total_model_memory = model_size * 18 * 1e9 / (gpus * 1024**3)
-    activation_checkpoints = 2 * layers * hidden_size * total_sequence / (gpus * 1024**3)
-    activation_working_memory = 40 * hidden_size * total_sequence / (gpus * 1024**3)
-    logits_working_memory = 4 * total_sequence * vocab / (gpus * 1024**3)
+    total_model_memory = model_size * 18 * 1000000000 / (gpus * 1024*1024*1024)
+    activation_checkpoints = 2 * layers * hidden_size * total_sequence/ (gpus * 1024*1024*1024)
+    activation_working_memory = 40 * hidden_size * total_sequence / (gpus * 1024 * 1024 * 1024)
+    logits_working_memory = 4 * total_sequence * vocab / (gpus * 1024 * 1024 * 1024) 
     total_memory = total_model_memory + activation_checkpoints + activation_working_memory + logits_working_memory
     return total_memory
 
