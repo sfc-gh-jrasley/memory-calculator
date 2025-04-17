@@ -43,9 +43,9 @@ with st.form("memory_form"):
 
     config, model_size = fetch_stats(model_choice)
     
-    hidden_size = config.get("hidden_size", 4096)
-    vocab = config.get("vocab_size", 50000)
-    layers = config.get("num_layers", 32)
+    hidden_size = config.get("hidden_size", -1)
+    vocab = config.get("vocab_size", -1)
+    layers = config.get("num_hidden_layers", -1)
 
     st.write(f"📄 Loaded Config: `hidden_size={hidden_size}`, `vocab_size={vocab}`, `layers={layers}`, `model_size={model_size}`")
 
