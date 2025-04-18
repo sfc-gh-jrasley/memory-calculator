@@ -3,7 +3,7 @@ import os
 import json
 from huggingface_hub import hf_hub_download
 
-models = ["meta-llama/Llama-3.3-70B-Instruct", "meta-llama/Llama-3.1-8B-Instruct", "Qwen/QwQ-32B", "Qwen/Qwen2.5-14B-Instruct-1M"]
+models = ["meta-llama/Llama-3.3-70B-Instruct", "meta-llama/Llama-3.1-8B-Instruct", "Qwen/QwQ-32B", "Qwen/Qwen2.5-14B-Instruct-1M", "Qwen/Qwen2.5-VL-7B-Instruct"]
 
 def fetch(filename, model_name):
     file_path = hf_hub_download(repo_id=model_name, filename=filename)
